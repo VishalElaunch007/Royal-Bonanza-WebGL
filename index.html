@@ -92,10 +92,33 @@
            };
    
        
-    
-    document.addEventListener('click', function(event) {
-     FullScreen();
+document.addEventListener('click', function (event) {
+    // Check if the user is on mobile
+    if (isMobile()) {
+        // Make sure the FullScreen function is triggered by a real user gesture
+        event.preventDefault(); 
+        FullScreen();
+    } else {
+        FullScreen();
+    }
 });
+
+function isMobile() {
+    return /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+function FullScreen() {
+    let elem = document.documentElement; // Use the document element for fullscreen
+
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { // Firefox
+        elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { // IE/Edge
+        elem.msRequestFullscreen();
+    }
+}
     </script>
     
     <!-- <div id="StartGame" class="background">
