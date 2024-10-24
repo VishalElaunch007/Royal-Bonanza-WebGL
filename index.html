@@ -85,7 +85,14 @@
             LoadUnityGame(); 
            };
    
+       window.addEventListener('focus', function() {
+
+              if (isMobile()) {
        
+                   event.preventDefault(); 
+                  FullScreenE();
+                }
+         });
         document.addEventListener('click', function (event) {
     
              if (isMobile()) {
