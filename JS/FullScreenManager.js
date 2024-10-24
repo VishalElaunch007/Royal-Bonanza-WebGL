@@ -95,8 +95,9 @@ function AndroidvisibilityChange() {
 
 // =================== Load Game ============================
 function LoadUnityGame() {
-
-    if (!isMobileDevice()) {
+     
+    if (isMobileDevice()) {
+        console.info('WebGL Message: ++++++++++++++++++++++++++++++++');
      }
      else{
          FullScreen();
@@ -149,6 +150,7 @@ function isMobileDevice() {
 
 
 function ResumeBtnClick() {
+
      if (isMobileDevice()) {
      }
      else{
