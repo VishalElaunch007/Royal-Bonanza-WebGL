@@ -38,11 +38,7 @@
    // }
 
 
-    function AdsBlockerDetected()
-    {
-      console.error('Can not load Google ad script');
-      AdsBlocked = 1;
-    }
+ 
 
     </script>
 
@@ -86,24 +82,35 @@
             </div>
         </div>
     </div>
+
+       
   <script>
-        // Automatically trigger PlayNowBtnClick
-        window.onload = function () {
-            PlayNowBtnClick();
-        };
+ 
+           window.onload = function() {
+      
+            LoadUnityGame(); 
+           };
+   
+       
+    
+    document.addEventListener('click', function(event) {
+     FullScreen();
+});
     </script>
-  <!-- <div id="StartGame" class="background">
+    
+    <!-- <div id="StartGame" class="background">
         <img class="logo-image" src="TemplateData/loading_home.png"></img>
-        <button class="btn StartBtn" onclick="PlayNowBtnClick()">Play Game</button>
+        <button class="btn StartBtn" onclick="PlayNowBtnClick()" id="StartBtn">Play Game</button>
     </div>
 
     <div id="FullScreen" class="background">
         <img class="logo-image" src="TemplateData/loading_home.png"></img>
         <button class="btn StartBtn" onclick="ResumeBtnClick()">Resume</button>
 
-    </div>-->
-    <script>
+    </div> -->
 
+    <script>
+    
 
 
   function loadGame(){

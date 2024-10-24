@@ -43,8 +43,7 @@ function AndroidInit() {
     if (typeof (AndroidCallback) != 'undefined') {
         console.info('Android game start Call back');
 
-       // var Orientation = GameOrientation == "portrait" ? "P" : "L";
-        var Orientation =  "L";
+        var Orientation = GameOrientation == "portrait" ? "P" : "L";
 
         //console.log(Orientation);
         AndroidCallback.onCallback(Orientation);
@@ -95,15 +94,8 @@ function AndroidvisibilityChange() {
 
 // =================== Load Game ============================
 function LoadUnityGame() {
-     
-    if (isMobileDevice()) {
-        FullScreen();
-          LockDevice();
-     }
-     else{
-        
-     }
-
+        console.log("in LoadUnityGame")
+   
     AndroidInit();
 
     if (isGameStarted == false) {
@@ -112,7 +104,7 @@ function LoadUnityGame() {
     }
 
     document.getElementById("unity-container").style.display = "block";
-    document.getElementById("StartGame").style.display = "none";
+  //  document.getElementById("StartGame").style.display = "none";
 
     LockDevice();
 
@@ -140,25 +132,13 @@ function LockDevice() {
     }
 }
 function PlayNowBtnClick() {
-    
+    console.log("A GYA BOSSS");
    LoadUnityGame();
 }
-
-function isMobileDevice() {
-    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-}
-
-
 function ResumeBtnClick() {
 
-     if (isMobileDevice()) {
-     }
-     else{
-         FullScreen();
-          LockDevice();
-     }
-
-   
+    FullScreen();
+    LockDevice();
 
     document.getElementById("unity-container").style.display = "block";
     document.getElementById("FullScreen").style.display = "none";
