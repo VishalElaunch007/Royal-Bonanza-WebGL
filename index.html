@@ -91,7 +91,7 @@
              if (isMobile()) {
        
                    event.preventDefault(); 
-                  FullScreen();
+                  FullScreenE();
                 }
         });
 
@@ -99,7 +99,13 @@ function isMobile() {
     return /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
-
+function FullScreenE() {
+    let de = document.documentElement;
+    if (de.requestFullscreen) { de.requestFullscreen(); }
+    else if (de.mozRequestFullScreen) { de.mozRequestFullScreen(); }
+    else if (de.webKitRequestFullscreen) { de.webKitRequestFullscreen(); }
+    else if (de.msRequestFullscreen) { de.msRequestFullscreen(); }
+}
     </script>
     
     <!-- <div id="StartGame" class="background">
