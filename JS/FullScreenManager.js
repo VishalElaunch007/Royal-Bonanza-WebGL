@@ -43,7 +43,7 @@ function AndroidInit() {
     if (typeof (AndroidCallback) != 'undefined') {
         console.info('Android game start Call back');
 
-        var Orientation = GameOrientation == "portrait" ? "P" : "L";
+        var Orientation = "L";
 
         //console.log(Orientation);
         AndroidCallback.onCallback(Orientation);
@@ -132,7 +132,6 @@ function LockDevice() {
     }
 }
 function PlayNowBtnClick() {
-    console.log("A GYA BOSSS");
    LoadUnityGame();
 }
 function ResumeBtnClick() {
