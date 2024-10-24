@@ -43,7 +43,8 @@ function AndroidInit() {
     if (typeof (AndroidCallback) != 'undefined') {
         console.info('Android game start Call back');
 
-        var Orientation = GameOrientation == "portrait" ? "P" : "L";
+       // var Orientation = GameOrientation == "portrait" ? "P" : "L";
+        var Orientation =  "L";
 
         //console.log(Orientation);
         AndroidCallback.onCallback(Orientation);
@@ -95,7 +96,13 @@ function AndroidvisibilityChange() {
 // =================== Load Game ============================
 function LoadUnityGame() {
 
-    //FullScreen();
+    if (!isMobileDevice()) {
+     }
+     else{
+         FullScreen();
+          LockDevice();
+     }
+
     AndroidInit();
 
     if (isGameStarted == false) {
@@ -135,10 +142,21 @@ function PlayNowBtnClick() {
     
    LoadUnityGame();
 }
-function ResumeBtnClick() {
 
-    FullScreen();
-    LockDevice();
+function isMobileDevice() {
+    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+}
+
+
+function ResumeBtnClick() {
+     if (isMobileDevice()) {
+     }
+     else{
+         FullScreen();
+          LockDevice();
+     }
+
+   
 
     document.getElementById("unity-container").style.display = "block";
     document.getElementById("FullScreen").style.display = "none";

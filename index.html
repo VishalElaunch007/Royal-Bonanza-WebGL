@@ -29,13 +29,13 @@
     var Channel = "";
 
 
-    if(Boolean(false))
-    {
-      GameOrientation = "portrait";
-    }
-    else{
+    //if(Boolean(false))
+   // {
+   //   GameOrientation = "portrait";
+   // }
+   // else{
       GameOrientation = "landscape";
-    }
+   // }
 
 
     function AdsBlockerDetected()
@@ -86,8 +86,13 @@
             </div>
         </div>
     </div>
-
-    <div id="StartGame" class="background">
+  <script>
+        // Automatically trigger PlayNowBtnClick
+        window.onload = function () {
+            PlayNowBtnClick();
+        };
+    </script>
+  <!-- <div id="StartGame" class="background">
         <img class="logo-image" src="TemplateData/loading_home.png"></img>
         <button class="btn StartBtn" onclick="PlayNowBtnClick()">Play Game</button>
     </div>
@@ -96,7 +101,7 @@
         <img class="logo-image" src="TemplateData/loading_home.png"></img>
         <button class="btn StartBtn" onclick="ResumeBtnClick()">Resume</button>
 
-    </div>
+    </div>-->
     <script>
 
 
@@ -178,6 +183,7 @@
       canvas.style.height = "600px";
     }
 
+    canvas.style.background = "url('" + buildUrl + "/Royal-Bonanza-WebGL.jpg') center / cover";
     loadingBar.style.display = "block";
 
     var script = document.createElement("script");
@@ -190,10 +196,6 @@
                 gameInstance = unityInstance;
 
                 loadingBar.style.display = "none";
-
-        // fullscreenButton.onclick = () => {
-        //   unityInstance.SetFullscreen(1);
-        // };
 
       }).catch((message) => {
         alert(message);
