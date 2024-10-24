@@ -97,11 +97,11 @@ function AndroidvisibilityChange() {
 function LoadUnityGame() {
      
     if (isMobileDevice()) {
-        console.info('WebGL Message: ++++++++++++++++++++++++++++++++');
+        FullScreen();
+          LockDevice();
      }
      else{
-         FullScreen();
-          LockDevice();
+        
      }
 
     AndroidInit();
